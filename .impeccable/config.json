@@ -38,6 +38,15 @@
         ],
         "createdAt": "2026-09-16T00:03:36.020Z",
         "reason": "single decorative industries-served ticker (max-one-marquee-per-page pattern explicitly endorsed by the gpt-taste and design-taste-frontend skills used to build this page); non-critical content, nothing actionable is hidden"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-16T00:24:45.924Z",
+        "reason": "modalImage is a hidden dialog template (#productModal, display via .is-open only); JS sets its src before the modal ever becomes visible, so it never ships as a visible broken-image box"
       }
     ]
   }

@@ -101,39 +101,39 @@
       <p class="section__lead" data-reveal>No vendemos solo pintura. Diseñamos soluciones en pisos y revestimientos para proyectos industriales, comerciales y decorativos.</p>
 
       <div class="bento">
-        <a href="https://wa.me/5491131336580?text=Hola%2C%20quiero%20consultar%20por%20Epoxi%20Cristal" target="_blank" rel="noopener" class="bento__card bento__card--big" data-reveal>
+        <button type="button" class="bento__card bento__card--big" data-reveal data-product="cristal">
           <img src="https://dcdn-us.mitiendanube.com/stores/007/097/879/products/reves-porc-l-r6v-a5c137f9e2f59cc85f17670268367384-480-0.webp" alt="Epoxi Cristal">
           <div class="bento__tag">Destacado</div>
           <div class="bento__label">
             <h3>Epoxi Cristal</h3>
             <p>Transparencia total para mesas río, mesadas y piezas decorativas.</p>
           </div>
-        </a>
+        </button>
 
-        <a href="https://wa.me/5491131336580?text=Hola%2C%20quiero%20consultar%20por%20Pisos%20Epoxi" target="_blank" rel="noopener" class="bento__card" data-reveal>
+        <button type="button" class="bento__card" data-reveal data-product="pisos">
           <img src="https://dcdn-us.mitiendanube.com/stores/007/097/879/products/img_20260118_143713471-17f649576e7beb5a0517695445363977-480-0.webp" alt="Pisos Epoxi">
           <div class="bento__label"><h3>Pisos Epoxi</h3></div>
-        </a>
+        </button>
 
-        <a href="https://wa.me/5491131336580?text=Hola%2C%20quiero%20consultar%20por%20Autonivelantes" target="_blank" rel="noopener" class="bento__card" data-reveal>
+        <button type="button" class="bento__card" data-reveal data-product="autonivelantes">
           <img src="https://dcdn-us.mitiendanube.com/stores/007/097/879/products/img_20150531_140001-7f7c1ab79b2578207a17670274695586-480-0.webp" alt="Autonivelantes">
           <div class="bento__label"><h3>Autonivelantes</h3></div>
-        </a>
+        </button>
 
-        <a href="https://wa.me/5491131336580?text=Hola%2C%20quiero%20consultar%20por%20Morteros%20Epoxi" target="_blank" rel="noopener" class="bento__card" data-reveal>
+        <button type="button" class="bento__card" data-reveal data-product="morteros">
           <img src="https://dcdn-us.mitiendanube.com/stores/007/097/879/products/reparacion6-bc737ec450b6c13a3517695430126992-480-0.webp" alt="Morteros Epoxi">
           <div class="bento__label"><h3>Morteros Epoxi</h3></div>
-        </a>
+        </button>
 
-        <a href="https://wa.me/5491131336580?text=Hola%2C%20quiero%20consultar%20por%20Anticorrosivos" target="_blank" rel="noopener" class="bento__card" data-reveal>
+        <button type="button" class="bento__card" data-reveal data-product="anticorrosivos">
           <img src="https://dcdn-us.mitiendanube.com/stores/007/097/879/products/pintura-anticorresiva-portada-casa-lima-9fea77a4a137bfc4fb17670286233141-480-0.webp" alt="Anticorrosivos">
           <div class="bento__label"><h3>Anticorrosivos</h3></div>
-        </a>
+        </button>
 
-        <a href="https://wa.me/5491131336580?text=Hola%2C%20quiero%20consultar%20por%20Drenantes%20e%20impermeabilizaci%C3%B3n" target="_blank" rel="noopener" class="bento__card bento__card--wide" data-reveal>
+        <button type="button" class="bento__card bento__card--wide" data-reveal data-product="drenantes">
           <img src="https://dcdn-us.mitiendanube.com/stores/007/097/879/products/whatsapp-image-2026-01-02-at-2-57-43-pm-af0c42519d8c00047217673895750478-480-0.webp" alt="Pisos drenantes e impermeabilización">
           <div class="bento__label"><h3>Drenantes e impermeabilización</h3></div>
-        </a>
+        </button>
       </div>
     </div>
   </section>
@@ -280,6 +280,30 @@
 <a href="https://wa.me/5491131336580" target="_blank" rel="noopener" class="floating-wa" aria-label="Escribinos por WhatsApp">
   <i class="ph-fill ph-whatsapp-logo"></i>
 </a>
+
+<div class="modal" id="productModal" aria-hidden="true">
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">
+      <i class="ph ph-x"></i>
+    </button>
+    <div class="modal__media">
+      <img id="modalImage" src="" alt="">
+    </div>
+    <div class="modal__body">
+      <p class="eyebrow eyebrow--dark" id="modalEyebrow">Ficha técnica</p>
+      <h3 id="modalTitle"></h3>
+      <p class="modal__desc" id="modalDesc"></p>
+      <ul class="modal__features" id="modalFeatures"></ul>
+      <div class="modal__apps" id="modalApps"></div>
+      <div class="modal__actions">
+        <a href="#" id="modalWaLink" target="_blank" rel="noopener" class="btn btn--accent">
+          <i class="ph ph-whatsapp-logo"></i> Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
