@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://epolaxindustrial.netlify.app/sitemap.xml

@@ -416,3 +416,48 @@ body.modal-open{overflow:hidden;}
 @media (max-width:640px){
   .catalog-hero{padding:130px 0 60px;}
 }
+
+/* ---------- Contact form ---------- */
+.contact-form__wrap{
+  display:grid;grid-template-columns:1fr;gap:48px;
+}
+@media (min-width:900px){
+  .contact-form__wrap{grid-template-columns:.85fr 1fr;align-items:start;}
+}
+.contact-form__intro .section__title{max-width:420px;}
+.contact-form__intro .section__lead{max-width:420px;}
+.contact-form{
+  background:var(--white);border-radius:var(--radius-card);
+  box-shadow:var(--shadow-soft);padding:32px;
+  display:flex;flex-direction:column;gap:20px;
+}
+.contact-form__honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+.form-field{display:flex;flex-direction:column;gap:8px;}
+.form-field label{font-size:13.5px;font-weight:600;color:var(--ink);}
+.form-field input,.form-field textarea{
+  font:inherit;font-size:15px;color:var(--ink);
+  border:1px solid var(--line);border-radius:10px;
+  padding:12px 14px;background:var(--paper);
+  transition:border-color .2s,background .2s;
+  resize:vertical;
+}
+.form-field input:focus,.form-field textarea:focus{
+  outline:none;border-color:var(--amber-dark);background:var(--white);
+}
+.form-field input::placeholder,.form-field textarea::placeholder{color:var(--ink-muted);}
+.contact-form .btn{align-self:flex-start;}
+
+/* ---------- Thank-you page ---------- */
+.thanks{
+  min-height:100dvh;display:flex;align-items:center;justify-content:center;
+  background:var(--navy-950);position:relative;overflow:hidden;padding:100px 24px;
+}
+.thanks::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(55% 60% at 50% 20%, rgba(245,166,35,.16), transparent 65%);
+}
+.thanks__inner{position:relative;text-align:center;max-width:560px;}
+.thanks__icon{font-size:52px;color:var(--amber);}
+.thanks__inner h1{margin-top:14px;color:var(--white);font-size:clamp(2rem,4.4vw,2.8rem);}
+.thanks__sub{margin-top:18px;color:var(--on-dark-muted);font-size:16px;line-height:1.65;}
+.thanks__actions{margin-top:34px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}

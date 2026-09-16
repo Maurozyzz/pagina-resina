@@ -65,6 +65,24 @@
         ],
         "createdAt": "2026-09-16T01:18:37.845Z",
         "reason": "false attribution: the marquee CSS rule lives in the shared style.css but productos.html contains no .marquee element at all"
+      },
+      {
+        "rule": "buried-raster",
+        "value": "*",
+        "files": [
+          "gracias.html"
+        ],
+        "createdAt": "2026-09-16T01:45:26.217Z",
+        "reason": "same intentional 3% opacity film-grain overlay used sitewide"
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "gracias.html"
+        ],
+        "createdAt": "2026-09-16T01:45:26.662Z",
+        "reason": "false attribution: marquee CSS rule lives in shared style.css but gracias.html has no marquee element"
       }
     ]
   }
