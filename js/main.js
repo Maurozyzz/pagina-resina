@@ -198,7 +198,22 @@ if (reduceMotion || typeof gsap === 'undefined') {
     const total = panels.length * seg;
 
     gsap.set(panels, { opacity: 0, y: 26, scale: .96, filter: 'blur(0px)' });
-    gsap.set(panels[0], { opacity: 1, y: 0, scale: 1 });
+
+    // Ease the opening headline in while the section is still scrolling into
+    // view, so it's already settled by the time the pin engages instead of
+    // popping in fully-formed the instant scrolling locks.
+    gsap.fromTo(panels[0],
+      { opacity: 0, y: 34, scale: .96, filter: 'blur(8px)' },
+      {
+        opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', ease: 'none',
+        scrollTrigger: {
+          trigger: '.cristal',
+          start: 'top 90%',
+          end: 'top top',
+          scrub: .6,
+        }
+      }
+    );
 
     const stackTl = gsap.timeline({
       scrollTrigger: {
