@@ -193,6 +193,13 @@ if (reduceMotion || typeof gsap === 'undefined') {
   const cristalPin = document.getElementById('cristalPin');
   if (cristalPin) {
     const panels = gsap.utils.toArray('[data-cristal-panel]', cristalPin);
+    const seg = 1;              // scroll-time allotted to each panel
+    const fade = .28;           // fraction of a segment spent fading in/out
+    const total = panels.length * seg;
+
+    gsap.set(panels, { opacity: 0, y: 26, scale: .96, filter: 'blur(0px)' });
+    gsap.set(panels[0], { opacity: 1, y: 0, scale: 1 });
+
     const stackTl = gsap.timeline({
       scrollTrigger: {
         trigger: '.cristal',
@@ -204,12 +211,25 @@ if (reduceMotion || typeof gsap === 'undefined') {
     });
 
     panels.forEach((panel, i) => {
-      if (i === 0) return;
-      stackTl.fromTo(panel, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1, ease: 'none' }, i - 1);
-      if (i < panels.length) {
-        stackTl.to(panels[i - 1], { opacity: 0, y: -40, duration: 1, ease: 'none' }, i - 1 + .5);
+      const segStart = i * seg;
+      const segEnd = segStart + seg;
+
+      if (i > 0) {
+        stackTl.fromTo(panel,
+          { opacity: 0, y: 26, scale: .96, filter: 'blur(6px)' },
+          { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', duration: fade, ease: 'power1.out' },
+          segStart
+        );
+      }
+      if (i < panels.length - 1) {
+        stackTl.to(panel,
+          { opacity: 0, y: -26, scale: 1.04, filter: 'blur(6px)', duration: fade, ease: 'power1.in' },
+          segEnd - fade
+        );
       }
     });
+
+    stackTl.to({}, { duration: .001 }, total);
   }
 
   /* ---------- Gallery horizontal pan ---------- */
