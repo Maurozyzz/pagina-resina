@@ -43,7 +43,11 @@ export default async (req) => {
   }).catch(() => null);
 
   if (!respuesta?.ok) {
-    console.error('No se pudo crear la order', respuesta?.status);
+    // El tipo de credencial alcanza para diagnosticar: nunca registrar el token ni el email.
+    const token = process.env.MP_ACCESS_TOKEN ?? '';
+    const credencial = token.startsWith('TEST-') ? 'TEST' : token.startsWith('APP_USR-') ? 'APP_USR' : token ? 'otro' : 'vacio';
+    const detalle = respuesta ? (await respuesta.text()).slice(0, 300) : 'sin respuesta';
+    console.error('No se pudo crear la order', respuesta?.status, credencial, detalle);
     return json({ error: 'mercado_pago' }, 502);
   }
   const orden = await respuesta.json();
