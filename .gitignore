@@ -1,2 +1,20 @@
 .impeccable/hook.cache.json
 .DS_Store
+
+# Credenciales: nunca al repositorio publico
+.env
+.env.*
+!.env.example
+
+# Material pago sin cifrar y archivos de trabajo
+cursos/
+fuente/
+sitio/
+lanzamiento/
+PENDIENTES_para_mañana.md
+
+# Generados
+dist/
+node_modules/
+.netlify/
+.pagokit/
