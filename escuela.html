@@ -570,7 +570,7 @@ function pintarManos() {
   const aviso = document.getElementById("c-aviso");
   const porMano = r.manos ? r.kg / r.manos : 0;
   aviso.className = "aviso";
-  aviso.textContent = `Cada mano lleva ${porMano.toFixed(2).replace(".", ",")} kg de mezcla, en relación 2:1: 2 partes de A y 1 de B. Colá por capas, nunca todo de una vez.`;
+  aviso.textContent = `Cada mano lleva ${Math.round(porMano * 2000 / 3)} g de A y ${Math.round(porMano * 1000 / 3)} g de B, por peso. Colá por capas, nunca todo de una vez.`;
 }
 function pintarPrecio() {
   const v = (id) => Math.max(Number(document.getElementById(id).value) || 0, 0);
