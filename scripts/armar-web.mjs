@@ -2,7 +2,7 @@
 import { cpSync, existsSync, mkdirSync, rmSync } from 'node:fs';
 
 const PUBLICOS = ['index.html', 'productos.html', 'gracias.html', 'escuela.html', 'favicon.svg',
-  'robots.txt', 'sitemap.xml', 'css', 'js'];
+  'robots.txt', 'sitemap.xml', 'css', 'js', 'catalogo.html', 'img'];
 
 rmSync('dist', { recursive: true, force: true });
 mkdirSync('dist');
